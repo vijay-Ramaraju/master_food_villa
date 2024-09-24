@@ -1,8 +1,6 @@
-import React from "react";
-import Header from "./components/Header/Header";
-import Home from "./components/Home/Home";
-import "./App.css";
-//https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/
+import React from 'react'
+import './Home.css'
+
 const items = [
   {
     info: {
@@ -1848,14 +1846,25 @@ const items = [
     },
   },
 ];
-
-function App() {
+const Home = () => {
   return (
-    <div className="App">
-      <Header />
-      <Home />
-    </div>
-  );
+
+    <ul className='restaurant-card'>  
+      {items.map((each) => {
+        return (
+          <li key={each.info.id} className="card">
+            
+            <img className='image' src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${each.info.cloudinaryImageId}`} alt="" />
+          <h2 className='headings'>{each.info.name}</h2>
+          {/* <h3 className='headings cuisines'>{cuisines.join(",")}</h3> */}
+          <h4 className='headings'>{each.info.avgRating}</h4>
+          <h5 className='headings'>{each.info.locality}</h5>
+          </li>
+        );
+      })}
+          
+    </ul>
+  )
 }
 
-export default App;
+export default Home

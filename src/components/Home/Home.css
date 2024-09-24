@@ -1,0 +1,40 @@
+    .card {
+        display: flex;
+        flex-direction: column;
+        width: 280px;
+        /* max-height: 100%; */
+        padding: 5px;
+        /* width: 100%; */
+        border: 1px solid #000;
+        gap: 0px;
+        height:400px;
+        box-sizing: border-box;
+        margin: 5px;
+        /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+        
+    }
+    .headings{
+        margin: 0px;
+        padding: 3px 0px;
+        width: 100%;
+    }
+    .cuisines{
+        flex-wrap: wrap;
+    }
+    .restaurant-card {
+        /* flex: 1 1 300px; */
+    /* margin: 10px; */
+        display: flex;
+        /* grid-template-columns:repeat(4 1fr); */
+        justify-content: center;
+        align-items: center;
+        /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+        /* border: 10px solid #000; */
+        /* width: fit-content; */
+        flex-wrap: wrap;
+    }
+.image{
+    height: 260px;
+    
+
+}
