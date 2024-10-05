@@ -6,17 +6,14 @@
     background-color: black;
     font-family: 'Roboto', sans-serif;
     /* position: fixed; */
-    
-    
     width: 100%;
-    
     z-index: 1000;
-    
     box-sizing: border-box;
 }
 
 .logo {
     width: 200px;
+    
 }
 
 .menu-lists {
@@ -42,6 +39,7 @@
     padding: 10px;
     font-weight: 500;
     cursor: pointer;
+    text-decoration: none;
     transition: all 0.3s ease-in-out;
 }
 
