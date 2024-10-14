@@ -1,3 +1,11 @@
+export const Fetch_url_restaurant =
+  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING";
+
+export const handleFiltered = (searchInput, filteredRestaurantList) => {
+  return filteredRestaurantList.filter((restaurant) =>
+    restaurant.info.name.toLowerCase().includes(searchInput.toLowerCase())
+  );
+};
 export const Img_url =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 export const items = [
