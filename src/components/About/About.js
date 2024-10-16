@@ -1,6 +1,6 @@
 const About = () => {
     return (
-        <div>
+        <div className="font-semibold h-full flex flex-col text-2xl justify-center items-center mt-[200px]">
             <h1>
                 This is About of the Master Food Villa Page
             </h1>

@@ -1,6 +1,6 @@
   import React, { lazy, Suspense } from "react";
   import ReactDOM from "react-dom/client";
-  import "./index.css";
+  import './index.css'
   import Header from './components/Header/Header'
   import Body from "./components/Body/Body";
   import Footer from "./components/Footer/Footer";
@@ -17,11 +17,11 @@
   );
 
   export const AppLayout = () => {
-    return (<>
+    return (<div className="bg-slate-100 font-sans max-h-full min-h-screen">
       <Header />
       <Outlet />
       <Footer />
-    </>
+    </div>
   )}
 
   const routing = createBrowserRouter([

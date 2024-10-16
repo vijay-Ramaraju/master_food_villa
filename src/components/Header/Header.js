@@ -2,102 +2,53 @@ import React, { useState } from "react";
 // import { Link } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import logo from "../../../src/images/image.png";
-import "./Header.css";
 
 const Header = () => {
   const [isLoggedin, setIsLoggedin] = useState(false);
 
   return (
-    <div className="header-container">
-      <div>
+    <div className="fixed top-0 left-0 right-0 z-50 w-full rounded-md font-sans flex justify-between items-center bg-pink-50 p-2 shadow-md px-5">
+      <div className="flex-shrink-0">
         <a href="/">
-          <img className="logo" src={logo} alt="logo" />
+          <img className="w-48 h-[120px]" src={logo} alt="logo" />
         </a>
       </div>
-      <div className="menu-lists">
-        <ul>
-          <Link style={{ textDecoration: "none" }} to="/">
-            <li
-              style={{
-                fontSize: "24px",
-                color: "#4e4e4e",
-                border: "3px solid #4d4d4d",
-                borderRadius: "6px",
-                padding: "10px",
-                fontWeight: "500",
-                cursor: "pointer",
-              }}
-            >
+      <div className="flex-grow flex justify-center">
+        <ul className="flex gap-2 items-center">
+          <Link to="/">
+            <li className="text-2xl p-2 rounded-md  bg-red-400 text-white font-semibold hover:bg-orange-400  hover:text-white">
               Home
             </li>
           </Link>
 
-          <Link style={{ textDecoration: "none" }} to="/about">
-            <li
-              style={{
-                fontSize: "24px",
-                border: "3px solid #4d4d4d",
-                borderRadius: "6px",
-                padding: "10px",
-                fontWeight: "500",
-                textDecoration: "none",
-                color: "#4e4e4e",
-                cursor: "pointer",
-              }}
-            >
+          <Link to="/about">
+            <li className="text-2xl p-2 rounded-md  bg-red-400 text-white font-semibold hover:bg-orange-400  hover:text-white">
               About
             </li>
           </Link>
 
-          <Link style={{ textDecoration: "none" }} to="/contact">
-            <li
-              style={{
-                fontSize: "24px",
-                border: "3px solid #4d4d4d",
-                borderRadius: "6px",
-                padding: "10px",
-                fontWeight: "500",
-                textDecoration: "none",
-                color: "#4e4e4e",
-                cursor: "pointer",
-              }}
-            >
+          <Link to="/contact">
+            <li className="text-2xl p-2 rounded-md  bg-red-400 text-white font-semibold hover:bg-orange-400  hover:text-white">
               Contact
             </li>
           </Link>
 
-          <Link style={{textDecoration: "none"}} to="/cart">
-          <li
-              style={{
-                fontSize: "24px",
-                border: "3px solid #4d4d4d",
-                borderRadius: "6px",
-                padding: "10px",
-                fontWeight: "500",
-                textDecoration: "none",
-                color: "#4e4e4e",
-                cursor: "pointer",
-              }}
-            >
+          <Link to="/cart">
+            <li className="text-2xl p-2 rounded-md  bg-red-400 text-white font-semibold hover:bg-orange-400  hover:text-white">
               Cart
             </li>
           </Link>
         </ul>
-        <button
-          style={{
-            marginLeft: "5px",
-            backgroundColor: "transparent",
-            border: "3px solid #4e4e4e",
-            borderRadius: "5px",
-            fontSize: "18px",
-            color: "#fff",
-            cursor: "pointer",
-          }}
-          onClick={() => setIsLoggedin((prev) => !prev)}
-        >
-          {isLoggedin ? "Logout" : "Login"}
-        </button>
       </div>
+      <div className="flex-shrink-0">
+        <button
+        className="text-2xl p-2 rounded-md  bg-red-400 text-white font-semibold hover:bg-orange-400  hover:text-white"
+        onClick={() => setIsLoggedin((prev) => !prev)}
+      >
+        {isLoggedin ? "Logout" : "Login"}
+      </button>
+      </div>
+      
     </div>
   );
 };
