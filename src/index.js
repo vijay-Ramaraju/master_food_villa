@@ -17,7 +17,7 @@
   );
 
   export const AppLayout = () => {
-    return (<div className="bg-slate-100 font-sans max-h-full min-h-screen">
+    return (<div className="font-sans max-h-full min-h-screen">
       <Header />
       <Outlet />
       <Footer />

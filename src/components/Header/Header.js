@@ -6,8 +6,9 @@ import logo from "../../../src/images/image.png";
 const Header = () => {
   const [isLoggedin, setIsLoggedin] = useState(false);
 
+  // className = "fixed top-0 left-0 right-0 z-50";
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 w-full rounded-md font-sans flex justify-between items-center bg-pink-50 p-2 shadow-md px-5">
+    <div className=" w-full rounded-md font-sans flex justify-between items-center bg-pink-50 p-2 shadow-md px-5">
       <div className="flex-shrink-0">
         <a href="/">
           <img className="w-48 h-[120px]" src={logo} alt="logo" />

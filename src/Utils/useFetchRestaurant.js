@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 
 const useFetchRestaurant = (props) => {
     const [restaurant, setRestaurant] = useState(null);
-    const [title, setTitle] = useState("");
+  const [title, setTitle] = useState("");
+  const [topPicks,setTopPics] = useState(null)
     
     useEffect(() => {
          getRestaurant();
@@ -15,15 +16,18 @@ const useFetchRestaurant = (props) => {
         );
         const data = await response.json();
 
-        setRestaurant(Object.values(data)[1].cards[2]);
-        setTitle(Object.values(data)[1].cards[0].card.card.text);
-
-        console.log();
+        setRestaurant(Object.values(data)[1]?.cards[2]);
+        setTitle(Object.values(data)[1]?.cards[0]?.card?.card?.text);
+        setTopPics(
+          Object.values(data)[1]?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards
+        );
+        // console.log(Object.values(data)[1].cards[4].groupedCard.cardGroupMap.REGULAR.cards);  
       } catch (error) {
         console.log("Failed to Fetch data", error);
       }
-    }
+  }
+  
     // console.log(id)
-    return [restaurant,title];
+    return [restaurant,title,topPicks];
 }
 export default useFetchRestaurant;
