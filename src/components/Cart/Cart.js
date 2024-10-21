@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { Img_url } from "../Contents";
-import ItemsList from '../RestaurantMenu/ItemsList'
+
 import {
   incrementItem,
   decrementItem,
@@ -13,7 +13,14 @@ const Cart = () => {
   return (
     <section className="md:flex md:justify-center  w-4/5 mx-auto md:my-5 fmd:flex-wrap gap-5">
       <div className="md:w-1/2 w-full">
-        {cartItems.length < 1 ? null : (
+        {cartItems.length < 1 ? (
+          <div className="text-center mt-12 flex flex-col gap-2">
+            <h1 className="text-2xl font-semibold">
+              Your cart is empty, please add items into cart{" "}
+            </h1>
+            <h1 className="text-5xl">🛒</h1>
+          </div>
+        ) : (
           <div className="flex justify-between py-2 my-2 text-lg items-center ">
             <p className="">Your Cart</p> <hr className="" />
             <button
@@ -25,7 +32,7 @@ const Cart = () => {
             </button>
           </div>
         )}
-        <hr className="my-2 border-gray-200 border-2" />
+        {/* <hr className="my-2 border-gray-200 border-2" /> */}
         {cartItems.map((item) => {
           const { name, imageId, price } = item?.card?.info;
           return (
@@ -33,7 +40,11 @@ const Cart = () => {
               key={item?.card?.info?.id}
               className="flex flex-wrap gap-5  my-2 items-center shadow-lg rounded-lg p-2"
             >
-              <img className="md:w-1/3 h-full" src={Img_url + imageId} />
+              <img
+                className="md:w-1/3 h-full"
+                src={Img_url + imageId}
+                alt={name}
+              />
               <div className="md:w-1/3 text-md ">
                 <p className="font-bold">{name}</p>
 
@@ -62,22 +73,20 @@ const Cart = () => {
           );
         })}
       </div>
-      {cartItems.length == 0 ? null : (
-        <div className="flex flex-col justify-center items-center md:w-1/3 w-full pl-2 md:border-l-2 md:border-gray-200 ">
-          <p className="my-2 py-2 text-xl font-bold">
-            Total price: Rs.{" "}
-            {cartItems.length &&
-              cartItems
-                .map((item) => (item.itemCount * item?.card?.info?.price) / 100)
-                .reduce((acc, curr) => acc + curr, 0)
-                .toFixed(2)}
-          </p>
-          <button className="px-2 py-1 bg-gray-900 text-white hover:bg-white hover:text-gray-900 hover:border-2 hover:border-gray-900">
-            Checkout&nbsp;&nbsp;&nbsp;
-            {/* <FontAwesomeIcon icon={faArrowRight} /> */}
-          </button>
-        </div>
-      )}
+
+      <div className="flex flex-col justify-center items-center md:w-1/3 w-full pl-2 md:border-l-2 md:border-gray-200 ">
+        <p className="my-2 py-2 text-xl font-bold">
+          Total price: Rs.{" "}
+          {cartItems.length &&
+            cartItems
+              .map((item) => (item.itemCount * item?.card?.info?.price) / 100)
+              .reduce((acc, curr) => acc + curr, 0)
+              .toFixed(2)}
+        </p>
+        <button className="px-2 py-1 bg-gray-900 text-white hover:bg-white hover:text-gray-900 hover:border-2 hover:border-gray-900">
+          Checkout&nbsp;&nbsp;&nbsp;
+        </button>
+      </div>
     </section>
   );
 };
