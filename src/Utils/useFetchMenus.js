@@ -14,7 +14,7 @@ const useFetchMenus = () => {
     const data = await response.json();
     const result =
       data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants;
+        ?.restaurants || [];
 
     setFilteredRestaurantList(result);
 

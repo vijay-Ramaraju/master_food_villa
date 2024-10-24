@@ -47,7 +47,7 @@ const TopPicksMenu = ({ category }) => {
             {openedLists === item?.card?.card?.title && (
               <div>
                 
-                  <ItemsList item={item?.card?.card?.itemCards} />;
+                  <ItemsList item={item?.card?.card?.itemCards} />
                 
               </div>  
             )}
